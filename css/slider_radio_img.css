@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#app {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#app .slider {
+  width: 600px;
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+}
+#app .slider input[type=radio] {
+  position: relative;
+  display: none;
+  /*当单选按钮chexked,选取相同下标的label*/
+  /*当单选按钮chexked,选取相同下标的图片*/
+}
+#app .slider input[type=radio]:nth-of-type(1):checked ~ .slider-control label:nth-of-type(1) {
+  background: #f00;
+}
+#app .slider input[type=radio]:nth-of-type(2):checked ~ .slider-control label:nth-of-type(2) {
+  background: #f00;
+}
+#app .slider input[type=radio]:nth-of-type(3):checked ~ .slider-control label:nth-of-type(3) {
+  background: #f00;
+}
+#app .slider input[type=radio]:nth-of-type(4):checked ~ .slider-control label:nth-of-type(4) {
+  background: #f00;
+}
+#app .slider input[type=radio]:nth-of-type(5):checked ~ .slider-control label:nth-of-type(5) {
+  background: #f00;
+}
+#app .slider input[type=radio]:nth-of-type(1):checked ~ .slider-imgs {
+  transform: translateX(0);
+}
+#app .slider input[type=radio]:nth-of-type(2):checked ~ .slider-imgs {
+  transform: translateX(-600px);
+}
+#app .slider input[type=radio]:nth-of-type(3):checked ~ .slider-imgs {
+  transform: translateX(-1200px);
+}
+#app .slider input[type=radio]:nth-of-type(4):checked ~ .slider-imgs {
+  transform: translateX(-1800px);
+}
+#app .slider input[type=radio]:nth-of-type(5):checked ~ .slider-imgs {
+  transform: translateX(-2400px);
+}
+#app .slider .slider-control {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#app .slider .slider-control label {
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  z-index: 10;
+}
+#app .slider .slider-imgs {
+  width: 3000px;
+  transition: 0.5s ease-in-out;
+}
+#app .slider .slider-imgs .slider-img {
+  float: left;
+}
+#app .slider .slider-imgs .slider-img img {
+  width: 600px;
+  height: 300px;
+}

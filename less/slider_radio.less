@@ -1,0 +1,111 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body {
+  min-height: 100vh;
+  .center;
+  ul.slider {
+    width: 600px;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    li {
+      width: inherit;
+      height: inherit;
+      .center;
+      font-size: 80px;
+      color: #fff;
+      position: absolute;
+      top: 0;
+      transition: 0.5s ease-in-out;
+      &:nth-of-type(1){
+        background: #f00;
+        left: 0;
+      }
+      &:nth-of-type(2){
+        left: 100%;
+        background: #0f0;
+      }
+      &:nth-of-type(3){
+        left: 200%;
+        background: #00f;
+      }
+    }
+    input[type=radio] {
+      position: relative;
+      z-index: 10;
+      display: none;
+      &:nth-of-type(1):checked ~ .slider-control label:nth-of-type(1) {
+        background: #000;
+      }
+      &:nth-of-type(2):checked ~ .slider-control label:nth-of-type(2) {
+        background: #000;
+      }
+      &:nth-of-type(3):checked ~ .slider-control label:nth-of-type(3) {
+        background: #000;
+      }
+      &:nth-of-type(1):checked ~ li.slider-img {
+        transform: translate(0);
+      }
+      &:nth-of-type(2):checked ~ li.slider-img {
+        transform: translate(-100%);
+      }
+      &:nth-of-type(3):checked ~ li.slider-img {
+        transform: translateX(-200%);
+      }
+    }
+    .slider-control {
+      width: inherit;
+      position: absolute;
+      left: 0;
+      bottom: 10px;
+      z-index: 2;
+      width: inherit;
+      height: 20px;
+      .center;
+    }
+
+    .slider-control label {
+      width: 10px;
+      height: 10px;
+      z-index: 10;
+      margin: 0 10px;
+      border-radius: 50%;
+      border: 2px solid #fff;
+    }
+    
+  }
+}
+@keyframes slide {
+  0% 
+  {
+    transform: translateX(0);
+  }
+  32% 
+  {
+    transform: translateX(0);
+  }
+  48% 
+  {
+    transform: translateX(-100%);
+  }
+  66% 
+  {
+    transform: translateX(-100%);
+  }
+  84% 
+  {
+    transform: translateX(-200);
+  }
+  100% 
+  {
+    transform: translateX(-200);
+  }
+}

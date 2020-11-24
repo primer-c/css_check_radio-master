@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#app {
+  min-height: 100vh;
+  .center;
+  .slider {
+    width: 600px;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    input[type=radio]{
+      position: relative;
+      display: none;
+      /*当单选按钮chexked,选取相同下标的label*/ 
+      &:nth-of-type(1):checked ~ .slider-control label:nth-of-type(1){
+        background: #f00;
+      }
+      &:nth-of-type(2):checked ~ .slider-control label:nth-of-type(2){
+        background: #f00;
+      }
+      &:nth-of-type(3):checked ~ .slider-control label:nth-of-type(3){
+        background: #f00;
+      }
+      &:nth-of-type(4):checked ~ .slider-control label:nth-of-type(4){
+        background: #f00;
+      }
+      &:nth-of-type(5):checked ~ .slider-control label:nth-of-type(5){
+        background: #f00;
+      }
+
+      /*当单选按钮chexked,选取相同下标的图片*/ 
+      &:nth-of-type(1):checked ~ .slider-imgs {
+        transform: translateX(0)
+      }
+      &:nth-of-type(2):checked ~ .slider-imgs {
+        transform: translateX(-600px)
+      }
+      &:nth-of-type(3):checked ~ .slider-imgs {
+        transform: translateX(-1200px)
+      }
+      &:nth-of-type(4):checked ~ .slider-imgs {
+        transform: translateX(-1800px)
+      }
+      &:nth-of-type(5):checked ~ .slider-imgs {
+        transform: translateX(-2400px)
+      }
+    }
+    .slider-control {
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+      .center;
+      label {
+        width: 10px;
+        height: 10px;
+        margin: 0 5px;
+        border-radius: 50%;
+        border: 2px solid #fff;
+        z-index: 10;
+      }
+    }
+    .slider-imgs {
+      width: 3000px;
+      transition: 0.5s ease-in-out;
+      // opacity: 0;
+      .slider-img {
+        float: left;
+        img {
+          width: 600px;
+          height: 300px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body ul.slider {
+  width: 600px;
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+}
+body ul.slider li {
+  width: inherit;
+  height: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 80px;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  transition: 0.5s ease-in-out;
+}
+body ul.slider li:nth-of-type(1) {
+  background: #f00;
+  left: 0;
+}
+body ul.slider li:nth-of-type(2) {
+  left: 100%;
+  background: #0f0;
+}
+body ul.slider li:nth-of-type(3) {
+  left: 200%;
+  background: #00f;
+}
+body ul.slider input[type=radio] {
+  position: relative;
+  z-index: 10;
+  display: none;
+}
+body ul.slider input[type=radio]:nth-of-type(1):checked ~ .slider-control label:nth-of-type(1) {
+  background: #000;
+}
+body ul.slider input[type=radio]:nth-of-type(2):checked ~ .slider-control label:nth-of-type(2) {
+  background: #000;
+}
+body ul.slider input[type=radio]:nth-of-type(3):checked ~ .slider-control label:nth-of-type(3) {
+  background: #000;
+}
+body ul.slider input[type=radio]:nth-of-type(1):checked ~ li.slider-img {
+  transform: translate(0);
+}
+body ul.slider input[type=radio]:nth-of-type(2):checked ~ li.slider-img {
+  transform: translate(-100%);
+}
+body ul.slider input[type=radio]:nth-of-type(3):checked ~ li.slider-img {
+  transform: translateX(-200%);
+}
+body ul.slider .slider-control {
+  position: absolute;
+  left: 0;
+  bottom: 10px;
+  z-index: 2;
+  width: inherit;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body ul.slider .slider-control label {
+  width: 10px;
+  height: 10px;
+  z-index: 10;
+  margin: 0 10px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  32% {
+    transform: translateX(0);
+  }
+  48% {
+    transform: translateX(-100%);
+  }
+  66% {
+    transform: translateX(-100%);
+  }
+  84% {
+    transform: translateX(-200);
+  }
+  100% {
+    transform: translateX(-200);
+  }
+}

@@ -1,1 +1,2 @@
-README
+# css_slider
+tutorial for slider
