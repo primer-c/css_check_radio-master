@@ -1,0 +1,78 @@
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#app {
+  .center;
+  min-height: 100vh;
+  .container {
+    .center;
+    flex-direction: column;
+    overflow: hidden;
+
+    .circle {
+      /*2x3.14x190*/ 
+      stroke-dasharray: 1194;
+      stroke-linecap: round;
+      stroke-dashoffset: 1194;
+    }
+    input[type=checkbox]:checked ~ svg .circle {
+      animation: circle 0.8s linear forwards;
+    }
+    .tick {
+      stroke-dasharray: 350;
+      stroke-dashoffset: 350;
+    }
+    input[type=checkbox]:checked ~ svg .tick {
+      animation: tick 0.8s linear forwards;
+      animation-delay: 0.9s;
+    }
+
+    h2 {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 30px;
+      color: #333;
+      opacity: 0;
+    }
+    input[type=checkbox]:checked ~ h2 {
+      animation: title 0.5s ease-in-out;
+      animation-fill-mode: forwards;
+      animation-delay: 1.6s;
+    }
+  }
+}
+@keyframes circle {
+  from 
+  {
+    stroke-dashoffset: 1194;
+  }
+  to 
+  {
+    stroke-dashoffset: 2388;
+  }
+}
+
+@keyframes tick {
+  from 
+  {
+    stroke-dashoffset: 300;
+  }
+  to 
+  {
+    stroke-dashoffset: 0;
+  }
+}
+
+
+@keyframes title {
+  from 
+  {
+    opacity: 0;
+  }
+  to 
+  {
+    opacity: 1;
+  }
+}

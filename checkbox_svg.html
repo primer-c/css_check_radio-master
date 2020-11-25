@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo of slider</title>
+  <link rel="stylesheet" href="less/checkbox_svg.css">
+  <script src="js/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <div class="container">
+      <input type="checkbox">
+      <svg width="400" height="400">
+        <circle 
+          fill="none"
+          stroke="#68e534"
+          stroke-width="20"
+          cx="200"
+          cy="200"
+          r="190"
+          class="circle"
+          transform="rotate(-90 200 200)"></circle>
+        <polyline 
+          fill="none"
+          stroke="#68e534"
+          stroke-width="24"
+          points="88,214 173,284 304,138"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="tick"></polyline>
+      </svg>
+      <h2>Payment Success</h2>
+    </div>
+  </div>
+  <script>
+    const app = new Vue({
+      el: "#app",
+      data: {},
+    })
+  </script>
+</body>
+</html>
